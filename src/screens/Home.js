@@ -8,6 +8,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import Signup from './signup';
 import Signin from './signin';
 import CustomInput from '../components/customInput';
+import Customtab, {appColor, windowHeight} from '../components/customtab';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -16,14 +17,14 @@ const arr = [
   {title: 'Signin', id: 2},
 ];
 
-function MyTabs() {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Signup" component={Signup} />
-      <Tab.Screen name="SignIn" component={Signin} />
-    </Tab.Navigator>
-  );
-}
+// function MyTabs() {
+//   return (
+//     <Tab.Navigator>
+//       <Tab.Screen name="Signup" component={Signup} />
+//       <Tab.Screen name="SignIn" component={Signin} />
+//     </Tab.Navigator>
+//   );
+// }
 
 const Home = navigation => {
   const [selected, setSelected] = useState(arr[0]);
@@ -34,15 +35,7 @@ const Home = navigation => {
         style={styles.imglogo}
       />
       {/* <Signin /> */}
-      <View
-        style={{
-          flexDirection: 'row',
-          marginTop: 10,
-
-          width: '100%',
-          justifyContent: 'space-around',
-          height: 40,
-        }}>
+      <View style={styles.tabStyle}>
         {arr.map(item => {
           const isSelected = item.id == selected.id;
 
@@ -53,7 +46,7 @@ const Home = navigation => {
                 isSelected
                   ? {
                       borderBottomWidth: 4.0,
-                      borderBottomColor: 'green',
+                      borderBottomColor: appColor.primry.color,
                       width: '40%',
                     }
                   : {
@@ -63,14 +56,7 @@ const Home = navigation => {
                     }
               }>
               <View>
-                <Text
-                  style={[
-                    {
-                      fontSize: 18,
-                      fontWeight: '700',
-                      textAlign: 'center',
-                    },
-                  ]}>
+                <Text style={[{fontSize: 18, alignSelf: 'center'}]}>
                   {item.title}
                 </Text>
               </View>
@@ -92,9 +78,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   imglogo: {
-    height: 100,
+    height: 80,
     with: 100,
     resizeMode: 'contain',
-    marginTop: 100,
+    marginTop: 40,
   },
+  tabStyle: {},
 });

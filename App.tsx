@@ -30,11 +30,15 @@ import {store} from './redux/Store';
 import Counter from './src/screens/counter';
 import Signup from './src/screens/signup';
 import Home from './src/screens/Home';
+import Customtab from './src/components/customtab';
+import DateTimeModal from './src/components/dateTimeModal';
+import Condional_Rendering from './src/components/condional_Rendering';
+import RichText from './src/components/RichText';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <Home />
+      <RichText />
     </Provider>
   );
 };
