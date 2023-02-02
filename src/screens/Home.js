@@ -1,6 +1,13 @@
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
 
-import {useState} from 'react';
+import {useState, useRef} from 'react';
 import React from 'react';
 
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -26,7 +33,7 @@ const arr = [
 //   );
 // }
 
-const Home = navigation => {
+const Home = () => {
   const [selected, setSelected] = useState(arr[0]);
   return (
     <View style={styles.main}>
@@ -64,7 +71,7 @@ const Home = navigation => {
           );
         })}
       </View>
-      {selected.id == 1 ? <Signup /> : <Signin />}
+      {/* {selected.id == 1 ? <Signup /> : <Signin />} */}
     </View>
   );
 };

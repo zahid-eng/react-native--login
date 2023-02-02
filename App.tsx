@@ -34,11 +34,12 @@ import Customtab from './src/components/customtab';
 import DateTimeModal from './src/components/dateTimeModal';
 import Condional_Rendering from './src/components/condional_Rendering';
 import RichText from './src/components/RichText';
+import RichTextScreen from './src/screens/richTextScreen';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <RichText />
+      <RichTextScreen />
     </Provider>
   );
 };
